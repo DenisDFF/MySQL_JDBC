@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
 
             SQLFileReader sqlFileReader = new SQLFileReader();

@@ -1,7 +1,7 @@
 package org.example;
 
 public class DatabaseInitService {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
 
             SQLFileReader sqlFileReader = new SQLFileReader();
