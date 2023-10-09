@@ -1,9 +1,10 @@
-SELECT id, EXTRACT(MONTH FROM AGE(finish_date, start_date)) AS MONTH_COUNT
+SELECT id, DATEDIFF('MONTH', start_date, finish_date) AS MONTH_COUNT
 FROM project
-WHERE EXTRACT(MONTH FROM AGE(finish_date, start_date)) = (
-    SELECT MAX(EXTRACT(MONTH FROM AGE(finish_date, start_date)))
+WHERE DATEDIFF('MONTH', start_date, finish_date) = (
+    SELECT MAX(DATEDIFF('MONTH', start_date, finish_date))
     FROM project
 );
+
 
 
 
