@@ -22,7 +22,6 @@ public class Database {
 
     private void H2Data() {
         String dbUrl = "jdbc:h2:~/test";
-        String sqlFilePath = ("init_db.sql");
 
         try {
             connector = DriverManager.getConnection(dbUrl, "sa", "");
@@ -33,17 +32,17 @@ public class Database {
 
     public int executeUpdate (String query) {
         try {
-            Statement statement = connector.createStatement();
-            return statement.executeUpdate(query);
+            PreparedStatement statement = connector.prepareStatement(query);
+            return statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public ResultSet executeResult (String query) {
+    public ResultSet executeResult(String query) {
         try {
-            Statement statement = connector.createStatement();
-            return statement.executeQuery(query);
+            PreparedStatement statement = connector.prepareStatement(query);
+            return statement.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

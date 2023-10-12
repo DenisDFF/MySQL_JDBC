@@ -13,7 +13,7 @@ public class Main {
             String file = "find_max_salary_worker.sql";
 
             String query = sqlFileReader.readSQLFile(file);
-//            System.out.println(query);
+
 
             Database instance = Database.getInstance();
             ResultSet resultSet = instance.executeResult(query);
